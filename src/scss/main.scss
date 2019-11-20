@@ -1,44 +1,18 @@
 @import "normalize";
 @import "variables";
+//@import "stars";
 @import url('https://fonts.googleapis.com/css?family=Jura&display=swap');
 
 html, body {
-    height: 100%;
+    height: 100vh;
     font-family: 'Jura', sans-serif;
-}
-
-.hidden-nav {
-  display: none;
-}
-
-#siteView {
-    height: 100%;
-    overflow: hidden;
-}
-
-
-a[ id= "section_0" ]:target ~ #siteView section {
-  transform: translateY( 0px );
-}
-
-a[ id= "section_1" ]:target ~ #siteView section {
-  transform: translateY( -100% );
-}
-a[ id= "section_2" ]:target ~ #siteView section {
-  transform: translateY( -200% );
-}
-
-section {
-    height: 100%;
-    transition: transform 0.6s ease-in-out;
-    backface-visibility: hidden;
 }
 
 .world-landing {
 
     color:rgb(222, 235, 255);
     text-align: center;
-    height: 100%;
+    height: 100vh;
     background:
         url(../img/A_world.svg) no-repeat center top,
         linear-gradient(45deg, hsla(223, 88%, 10%, 1) 0%, hsla(223, 88%, 10%, 0) 90%),
@@ -76,15 +50,99 @@ section {
 
 }
 
+.sky-landing {
+    background: linear-gradient(#111627 0%,#312041 40%, #223a6a 70%, #355ab0 100%);
+    color:rgb(222, 235, 255);
+    position: relative;
+
+    &__wrap {
+        padding: 40px 30px 0;
+        @media (min-width: 1024px) {
+            padding: 100px 150px 0;
+        }
+    }
+
+    &__row {
+        @media (min-width: 1024px) {
+            display: flex;
+        }
+    }
+
+    &__cell {
+        padding-bottom: 40px;
+        @media (min-width: 1024px) {
+            flex-basis: 33.33%;
+            padding-right: 40px;
+            &:last-child {
+                padding-right: 0;
+            }
+            &_wide {
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    &__card {
+        background: rgba(250,250,250,0.05);
+        padding: 30px;
+    }
+
+    &__card-header {
+        font-size: 20px;
+        font-weight: 600;
+        padding: 20px 0;
+        @media (min-width: 1024px) {
+            font-size: 30px;
+        }
+    }
+
+    &__card-content {
+        line-height: 1.5;
+        font-size: 15px;
+        @media (min-width: 1024px) {
+            font-size: 18px;
+        }
+        ul {
+            padding-left: 20px;
+            list-style-type: square;
+            list-style-position: outside;
+        }
+    }
+
+    &__card-link {
+        text-align: right;
+        a {
+            color:rgb(222, 235, 255);
+            padding-right: 30px;
+            background: url(/link.svg) no-repeat right bottom;
+            background-size: contain;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    &__header {
+        padding: 50px 0;
+        font-size: 25px;
+        @media (min-width: 1024px) {
+            font-size: 50px;
+        }
+    }
+
+}
+
 .tech-landing {
 
-    height: 100%;
+    padding-bottom: 200px;
+
     background:
         url(../img/cloud_1.png) no-repeat left bottom,
         url(../img/cloud_4.png) no-repeat right bottom,
         linear-gradient(#355ab0 0%,#527ccc 100%);
     background-size: 50% auto, 40% auto, contain;
     @media (min-width: 1024px) {
+        padding-bottom: 400px;
         background:
             url(../img/cloud_1.png) no-repeat left bottom,
             url(../img/cloud_3.png) no-repeat center bottom,
@@ -94,13 +152,12 @@ section {
     }
 
     &__text {
-        padding: 40px 30px;
+        padding: 20px 30px 40px;
         font-size: 25px;
-        font-weight: 600;
         color:rgb(222, 235, 255);
         @media (min-width: 1024px) {
-            font-size: 40px;
-            padding: 100px 200px;
+            font-size: 50px;
+            padding: 50px 150px 100px;
         }
     }
 
@@ -178,7 +235,7 @@ section {
 .contact-landing {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     &__map {
         flex-grow: 1;
         filter: grayscale(70%);

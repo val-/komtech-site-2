@@ -23,38 +23,3 @@ function init(){
     myMap.geoObjects.add(myPlacemark);
 }
 
-function switchSection(moveDown) {
-  if (window.switchSectionLock) {
-    return;
-  } else {
-    window.switchSectionLock = true;
-    setTimeout(() => {
-        window.switchSectionLock = false;
-    }, 400);
-  }
-  const currnetSection = location.hash && location.hash.split('_')[1]*1 || 0;
-  const delta = moveDown ? 1 : -1;
-  let newSection = currnetSection + delta;
-  if (!document.getElementById(`section_${newSection}`)) {
-    return;
-  }
-  location.hash = `section_${newSection}`;
-}
-
-window.addEventListener('wheel', function (event) {
-    switchSection(event.deltaY > 0);
-});
-
-
-var square = document.querySelector('#siteView');
-var manager = new Hammer.Manager(square);
-var Pan = new Hammer.Pan();
-manager.add(Pan);
-
-manager.on('panup', function() {
-    switchSection(true);
-});
-
-manager.on('pandown', function() {
-    switchSection(false);
-});
