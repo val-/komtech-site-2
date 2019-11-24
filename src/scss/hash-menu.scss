@@ -1,0 +1,25 @@
+.hash-menu {
+
+    display: none;
+
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    margin-top: -80px;
+
+    &__link {
+        text-decoration: none;
+        color: rgb(222, 235, 255);
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__link-text {
+        
+    }
+
+    &__link-pic {
+        
+    }
+
+}
