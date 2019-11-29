@@ -9,25 +9,21 @@
 <body>
 
     <div class="hash-menu">
-        <a class="hash-menu__link" href="#about">
-            <div class="hash-menu__link-text">Компания</div>
-            <div class="hash-menu__link-pic">#</div>
-        </a>
-        <a class="hash-menu__link" href="#products">
-            <div class="hash-menu__link-text">Продукты</div>
-            <div class="hash-menu__link-pic">#</div>
-        </a>
-        <a class="hash-menu__link" href="#vacancies">
-            <div class="hash-menu__link-text">Вакансии</div>
-            <div class="hash-menu__link-pic">#</div>
-        </a>
-        <a class="hash-menu__link" href="#contacts">
-            <div class="hash-menu__link-text">Контакты</div>
-            <div class="hash-menu__link-pic">#</div>
-        </a>
+        <div class="hash-menu__item">
+            <a class="hash-menu__link" href="#about">Компания</a>
+        </div>
+        <div class="hash-menu__item">
+            <a class="hash-menu__link" href="#products">Продукты</a>
+        </div>
+        <div class="hash-menu__item">
+            <a class="hash-menu__link" href="#vacancies">Вакансии</a>
+        </div>
+        <div class="hash-menu__item">
+            <a class="hash-menu__link" href="#contacts">Контакты</a>
+        </div>
     </div>
         
-    <div class="world-landing">
+    <div class="world-landing anchor-js" id="about">
         <a href="./" class="world-landing__logo">
             Комтех-Н
         </a>
@@ -40,11 +36,9 @@
 
     <div class="sky-landing">
 
-        <div class="stars small"></div>
-        <div class="stars medium"></div>
-        <div class="stars large"></div>
+        <div class="sky-landing__stars-container"></div>
 
-        <div class="sky-landing__wrap">
+        <div class="sky-landing__wrap anchor-js" id="products">
             <div class="sky-landing__header">
                 Программные продукты
             </div>
@@ -119,32 +113,8 @@
                     </div>
                 </div>
             </div>
-
-            <div class="sky-landing__header">
-                Центры обработки данных
-            </div>
-            <div class="sky-landing__row">
-                <div class="sky-landing__cell sky-landing__cell_wide">
-                    <div class="sky-landing__card">
-                        <div class="sky-landing__card-content">
-
-                            В нашем распоряжении есть три ЦОДа: в Санкт-Петербурге, Нюрнберге и самый крупный находится в Москве на улице Волгина.
-                            <br/>
-                            Меньше километра до международного узла обмена трафика M9.
-                            <br/>
-                            Есть две линии энергоснабжения, климат-контроль, три интернет провайдера, противопожарная система - мы делаем всё, чтобы исключить технические неполадки.
-                            <br/>
-                            У нас используются продвинутые методы защиты от DDos атак, видеонаблюдение и система контроля доступа не позволит никому нанести физическую атаку.
-                            <br/>
-                            Все эти ресурсы предназначены для безотказной работы сервисов наших клиентов.
-                            <br/>
-                            Прямо сейчас, каждую секунду, обрабатываются тысячи запросов тарификации, клиенты получают данные, пассажиры оформляют билеты.
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        </div>
+        <div class="sky-landing__wrap anchor-js" id="vacancies">
             <div class="sky-landing__header">
                 Вакансии
             </div>
@@ -221,7 +191,7 @@
         </div>
     </div>
 
-    <div class="contact-landing">
+    <div class="contact-landing anchor-js" id="contacts">
         <div class="contact-landing__text">
             <div class="contact-landing__text-cell">
                 <img src="./assets/img/map.svg" alt="Address" class="contact-landing__text-cell-image contact-landing__text-cell-image_map"/>
@@ -240,6 +210,7 @@
         </div>
         <div class="contact-landing__map" id="map"></div>
     </div>
+
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=8db4f8bb-4daa-4eb0-9a1a-7a12a1b73d05&lang=ru_RU" type="text/javascript"></script>
 

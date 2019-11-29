@@ -1,12 +1,12 @@
 @import "normalize";
 @import "variables";
-@import "stars";
 @import "hash-menu";
 @import url('https://fonts.googleapis.com/css?family=Jura&display=swap');
 
 html, body {
     height: 100vh;
     font-family: 'Jura', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .world-landing {
@@ -55,6 +55,35 @@ html, body {
     background: linear-gradient(#111627 0%,#312041 40%, #223a6a 70%, #355ab0 100%);
     color:rgb(222, 235, 255);
     position: relative;
+
+    &__stars-container {
+        position: absolute;
+        left: 0; top: 0;
+        height: 500vh;
+        @media (min-width: 1024px) {
+            height: 300vh;
+        }    
+        @media (min-width: 1600px) {
+            height: 200vh;
+        }    
+        width: 100%;
+        .star {
+            background: white;
+            position: absolute;
+            &_1 {
+                width: 1px;
+                height: 1px;
+            }
+            &_2 {
+                width: 2px;
+                height: 2px;
+            }
+            &_3 {
+                width: 3px;
+                height: 3px;
+            }
+        }
+    }
 
     &__wrap {
         padding: 40px 30px 0;
@@ -115,7 +144,7 @@ html, body {
         a {
             color:rgb(222, 235, 255);
             padding-right: 30px;
-            background: url(/link.svg) no-repeat right bottom;
+            background: url(../img/link.svg) no-repeat right bottom;
             background-size: contain;
             &:hover {
                 text-decoration: none;
