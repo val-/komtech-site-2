@@ -37,7 +37,7 @@ window.document.addEventListener("DOMContentLoaded", function () {
         updateMenuByHash(location.hash);
     });
 
-    window.addEventListener('scroll', function (event) {        
+    window.addEventListener('scroll', function (event) {
         const THRESHOLD = 30;
         let newHash = '';
         for (let i = 0; i < anchors.length; i++) {
